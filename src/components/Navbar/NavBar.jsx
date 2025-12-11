@@ -128,39 +128,52 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <li className={styles.nav_item} onClick={closeMenu}>
-          <AnchorLink offset={90} href="#home">
+        <li className={styles.nav_item}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={90}
+            href="#home"
+            onClick={closeMenu}
+          >
             Home
           </AnchorLink>
         </li>
-        <li className={styles.nav_item} onClick={closeMenu}>
-          <AnchorLink offset={85} href="#about">
+        <li className={styles.nav_item}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#about"
+            onClick={closeMenu}
+          >
             About Me
           </AnchorLink>
         </li>
-        <li className={styles.nav_item} onClick={closeMenu}>
+        <li className={styles.nav_item}>
           <AnchorLink
             className={styles.anchor_link}
             offset={85}
             href="#services"
+            onClick={closeMenu}
           >
             Services
           </AnchorLink>
         </li>
-        <li className={styles.nav_item} onClick={closeMenu}>
+        <li className={styles.nav_item}>
           <AnchorLink
             className={styles.anchor_link}
             offset={85}
             href="#portfolio"
+            onClick={closeMenu}
           >
             Portfolio
           </AnchorLink>
         </li>
-        <li className={styles.nav_item} onClick={closeMenu}>
+        <li className={styles.nav_item}>
           <AnchorLink
             className={styles.anchor_link}
             offset={85}
             href="#contact"
+            onClick={closeMenu}
           >
             Contact
           </AnchorLink>

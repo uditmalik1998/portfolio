@@ -191,10 +191,17 @@
   .nav_item {
     font-size: 24px;
     margin-top: 1rem;
+    list-style: none;
   }
 
   .nav_item a {
     color: white;
+  }
+  .anchor_link {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
   }
 }
 .anchor_link {
