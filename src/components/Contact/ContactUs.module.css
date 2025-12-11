@@ -114,6 +114,8 @@
 }
 
 .contact_submit {
+  display: flex;
+  justify-content: center;
   border: none;
   color: white;
   border-radius: 50px;

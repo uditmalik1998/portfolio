@@ -14,14 +14,14 @@ const Services = () => {
       <div className={styles.services_container}>
         {Services_Data.map((item, index) => {
           return (
-            <div className={styles.services_format} key={index}>
+            <div className={styles.services_format} key={item.s_no}>
               <h3>{item.s_no}</h3>
               <h2>{item.s_name}</h2>
               <p>{item.s_desc}</p>
-              <div className={styles.services_readmore}>
+              {/* <div className={styles.services_readmore}>
                 <p>Read More</p>
                 <img src={arrow_icon} alt="arrow_icon" />
-              </div>
+              </div> */}
             </div>
           );
         })}

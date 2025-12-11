@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ContactUs.module.css";
 import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import call_icon from "../../assets/call_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
+import Loader from "../Loder/Loader";
 
 const ContactUs = () => {
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const formData = new FormData(e.target);
+
+    formData.append("access_key", process.env.REACT_APP_API_KEY);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const json = await response.json();
+      if (json?.success) {
+        alert("Email Send Successfully");
+      } else {
+        alert("Something went wrong");
+      }
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      alert(err.message);
+      console.error(err);
+    }
+  };
   return (
-    <div className={styles.contact}>
+    <div id="contact" className={styles.contact}>
       <div className={styles.contact_title}>
         <h1>Get in Touch</h1>
         <img
@@ -22,12 +48,13 @@ const ContactUs = () => {
           <p>
             I'm currently available to take on new projects and employment
             opportunities. Whether you have a question about my tech stack
-            (React, Next.js, SQL), or want to discuss a potential collaboration.
+            (React, Next.js, React Native), or want to discuss a potential
+            collaboration.
           </p>
           <div className={styles.contact_details}>
             <div className={styles.contact_detail}>
               <img src={mail_icon} alt="Mail" />
-              <p>uditm9699@gmail.com</p>
+              <p>uditmalik34@gmail.com</p>
             </div>
             <div className={styles.contact_detail}>
               <img src={call_icon} alt="Call" />
@@ -39,7 +66,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <form className={styles.contact_right}>
+        <form onSubmit={handleSubmit} className={styles.contact_right}>
           <div className={styles.form_group}>
             <label htmlFor="name">Your Name</label>
             <input
@@ -70,8 +97,12 @@ const ContactUs = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className={styles.contact_submit}>
-            Submit Now
+          <button
+            type="submit"
+            className={styles.contact_submit}
+            disabled={loading}
+          >
+            {loading ? <Loader /> : "Submit Now"}
           </button>
         </form>
       </div>

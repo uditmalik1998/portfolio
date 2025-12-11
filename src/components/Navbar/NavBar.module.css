@@ -157,6 +157,7 @@
   }
 
   .nav_menu {
+    display: none;
     position: fixed;
     top: 0;
     right: -350px;
@@ -188,4 +189,8 @@
   .nav_item a {
     color: white;
   }
+}
+.anchor_link{
+  text-decoration: none;
+  color:white;
 }

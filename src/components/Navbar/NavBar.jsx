@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./NavBar.module.css";
 import udit_img from "../../assets/udit.jpeg";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,24 +69,50 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <li className={styles.nav_item}>
-          <a href="#home">Home</a>
+        <li className={styles.nav_item} onClick={closeMenu}>
+          <AnchorLink offset={90} href="#home">
+            Home
+          </AnchorLink>
         </li>
-        <li className={styles.nav_item}>
-          <a href="#about">About Me</a>
+        <li className={styles.nav_item} onClick={closeMenu}>
+          <AnchorLink offset={85} href="#about">
+            About Me
+          </AnchorLink>
         </li>
-        <li className={styles.nav_item}>
-          <a href="#services">Services</a>
+        <li className={styles.nav_item} onClick={closeMenu}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#services"
+          >
+            Services
+          </AnchorLink>
         </li>
-        <li className={styles.nav_item}>
-          <a href="#portfolio">Portfolio</a>
+        <li className={styles.nav_item} onClick={closeMenu}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#portfolio"
+          >
+            Portfolio
+          </AnchorLink>
         </li>
-        <li className={styles.nav_item}>
-          <a href="#contact">Contact</a>
+        <li className={styles.nav_item} onClick={closeMenu}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#contact"
+          >
+            Contact
+          </AnchorLink>
         </li>
       </ul>
 
-      <div className={styles.nav_connect}>Connect With Me</div>
+      <div className={styles.nav_connect}>
+        <AnchorLink className={styles.anchor_link} offset={80} href="#contact">
+          Connect With Me
+        </AnchorLink>
+      </div>
     </div>
   );
 };

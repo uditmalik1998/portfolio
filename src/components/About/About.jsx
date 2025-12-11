@@ -4,7 +4,7 @@ import udit_img from "../../assets/udit.jpeg";
 
 const About = () => {
   return (
-    <div className={styles.about}>
+    <div id="about" className={styles.about}>
       <div className={styles.about_title}>
         <h1 className={styles.heading}>About me</h1>
       </div>
