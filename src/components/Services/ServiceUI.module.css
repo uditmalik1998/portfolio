@@ -6,7 +6,7 @@
   justify-content: center;
   gap: 60px;
   /* Changed fixed margin to responsive padding */
-  padding: 80px 10%; 
+  padding: 50px 10%; 
   margin: 0 auto;
   max-width: 1400px;
 }

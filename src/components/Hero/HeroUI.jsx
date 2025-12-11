@@ -4,6 +4,13 @@ import udit_img from "../../assets/udit.jpeg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Hero = () => {
+  const resumeDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Udit_Malik.pdf";
+    link.download = "Udit Malik Resume.pdf";
+    link.click();
+  };
+
   return (
     <div id="home" className={styles.hero}>
       <img className={styles.avatar_logo} src={udit_img} alt="hero" />
@@ -26,7 +33,9 @@ const Hero = () => {
             Connect with me
           </AnchorLink>
         </div>
-        <div className={styles.hero_resume}>My resume</div>
+        <div className={styles.hero_resume} onClick={resumeDownload}>
+          My resume
+        </div>
       </div>
     </div>
   );
