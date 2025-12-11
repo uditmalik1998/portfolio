@@ -48,8 +48,67 @@ const Navbar = () => {
         </svg>
       </div>
 
-      {/* Navigation Menu */}
       <ul ref={menuRef} className={styles.nav_menu}>
+        {/* Close button */}
+        <div className={styles.nav_mob_close} onClick={closeMenu}>
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        <li className={styles.nav_item}>
+          <AnchorLink offset={90} href="#home">
+            Home
+          </AnchorLink>
+        </li>
+        <li className={styles.nav_item}>
+          <AnchorLink offset={85} href="#about">
+            About Me
+          </AnchorLink>
+        </li>
+        <li className={styles.nav_item}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#services"
+          >
+            Services
+          </AnchorLink>
+        </li>
+        <li className={styles.nav_item}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#portfolio"
+          >
+            Portfolio
+          </AnchorLink>
+        </li>
+        <li className={styles.nav_item}>
+          <AnchorLink
+            className={styles.anchor_link}
+            offset={85}
+            href="#contact"
+          >
+            Contact
+          </AnchorLink>
+        </li>
+      </ul>
+
+      {/* Navigation Menu */}
+      <ul ref={menuRef} className={styles.nav_menu_mobile}>
         {/* Close button */}
         <div className={styles.nav_mob_close} onClick={closeMenu}>
           <svg

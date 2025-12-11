@@ -130,6 +130,9 @@
   display: none;
   cursor: pointer;
 }
+.nav_menu_mobile {
+  display: none;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -157,6 +160,10 @@
   }
 
   .nav_menu {
+    display: none;
+  }
+
+  .nav_menu_mobile {
     display: none;
     position: fixed;
     top: 0;
@@ -190,7 +197,7 @@
     color: white;
   }
 }
-.anchor_link{
+.anchor_link {
   text-decoration: none;
-  color:white;
+  color: white;
 }
